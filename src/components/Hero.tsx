@@ -68,26 +68,36 @@ function Words({ html }: { html: string }) {
 export function Hero() {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<"in" | "out">("in");
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reduced = usePrefersReducedMotion();
 
-  const clear = () => {
-    if (timer.current) clearTimeout(timer.current);
-  };
+  /**
+   * Two timers, deliberately kept in separate refs.
+   *
+   * `hold` is how long a state stays on screen; `swap` is the short exit
+   * animation before the next state mounts. They MUST NOT share a ref: the
+   * auto-advance effect below re-runs whenever `phase` changes, and its
+   * cleanup would then clear the in-flight swap timer, stranding the hero in
+   * the `out` phase — visible for 8s, then blank forever.
+   */
+  const hold = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const swap = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const goTo = useCallback(
     (next: number) => {
-      clear();
-      const swap = () => {
+      if (hold.current) clearTimeout(hold.current);
+      if (swap.current) clearTimeout(swap.current);
+
+      if (reduced) {
         setIndex(next);
         setPhase("in");
-      };
-      if (reduced) {
-        swap();
         return;
       }
+
       setPhase("out");
-      timer.current = setTimeout(swap, OUT);
+      swap.current = setTimeout(() => {
+        setIndex(next);
+        setPhase("in");
+      }, OUT);
     },
     [reduced],
   );
@@ -95,12 +105,22 @@ export function Hero() {
   // auto-advance, paused entirely under reduced motion
   useEffect(() => {
     if (reduced || phase !== "in") return;
-    timer.current = setTimeout(
+    hold.current = setTimeout(
       () => goTo((index + 1) % heroStates.length),
       HOLD,
     );
-    return clear;
+    return () => {
+      if (hold.current) clearTimeout(hold.current);
+    };
   }, [index, phase, goTo, reduced]);
+
+  // the swap timer only ever needs cancelling when the hero unmounts
+  useEffect(
+    () => () => {
+      if (swap.current) clearTimeout(swap.current);
+    },
+    [],
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
