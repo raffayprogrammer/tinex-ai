@@ -1,4 +1,5 @@
 import { nav, site } from "@/content/site";
+import { Logo } from "./Logo";
 import { Reveal } from "./Reveal";
 import { Kicker, Shell } from "./ui";
 
@@ -69,9 +70,12 @@ export function Close() {
       <footer className="border-t border-line-soft py-10">
         <Shell className="flex flex-col gap-8">
           <div className="flex flex-wrap items-center justify-between gap-6">
-            <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-faint">
-              {site.name} — AI labor for home services
-            </span>
+            <div className="flex flex-col gap-3">
+              <Logo size={26} />
+              <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-faint">
+                AI labor for home services
+              </span>
+            </div>
             <nav className="flex flex-wrap gap-6" aria-label="Footer">
               {nav.map((n) => (
                 <a

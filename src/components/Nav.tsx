@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { nav, site } from "@/content/site";
+import { Logo } from "./Logo";
 
 /**
  * The pill's indicator follows the pointer, then settles back onto whichever
@@ -73,11 +74,8 @@ export function Nav() {
           : "border-b border-transparent"
       }`}
     >
-      <a href="#top" className="group flex items-center gap-2.5" aria-label={`${site.name}, back to top`}>
-        <Logo />
-        <span className="text-[0.9375rem] font-semibold tracking-[-0.01em]">
-          Tinex<span className="text-brass">.AI</span>
-        </span>
+      <a href="#top" aria-label={`${site.name}, back to top`}>
+        <Logo size={28} />
       </a>
 
       <nav
@@ -129,13 +127,3 @@ export function Nav() {
   );
 }
 
-function Logo() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="0.75" y="0.75" width="22.5" height="22.5" rx="6" stroke="rgba(242,240,234,.2)" />
-      {/* a T cut from a shift block — the mark reads as a name badge */}
-      <path d="M6 7.5h12M12 7.5V17" stroke="#D9A441" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="12" cy="17.2" r="1.4" fill="#4E9E7F" />
-    </svg>
-  );
-}

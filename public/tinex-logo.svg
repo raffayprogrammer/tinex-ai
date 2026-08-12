@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132" fill="none" role="img" aria-label="Tinex">
+  <defs>
+    <linearGradient id="tinexGrad" x1="16" y1="8" x2="104" y2="126" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E8BC5A"/>
+      <stop offset="0.42" stop-color="#C9974A"/>
+      <stop offset="0.72" stop-color="#6E6E86"/>
+      <stop offset="1" stop-color="#3B3A7C"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke="url(#tinexGrad)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <!-- T bar -->
+    <path d="M16 10 H104 V30 H74 V44 H46 V30 H16 Z" />
+
+    <!-- X body, sharing the T stem through the waist -->
+    <path d="M46 44 H74 L104 122 H76 L60 82 L44 122 H16 Z" />
+
+    <!-- facet lines: the low-poly triangulation -->
+    <path d="M16 10 L46 30 M104 10 L74 30 M46 30 H74" stroke-width="1" opacity="0.75" />
+    <path d="M46 44 L60 82 L74 44" stroke-width="1" opacity="0.75" />
+    <path d="M74 44 L76 122 M46 44 L44 122" stroke-width="1" opacity="0.55" />
+    <path d="M60 82 L104 122 M60 82 L16 122" stroke-width="1" opacity="0.4" />
+  </g>
+</svg>

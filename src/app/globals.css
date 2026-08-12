@@ -111,7 +111,9 @@ h3 {
 .reveal.in {
   opacity: 1;
   transform: none;
-  filter: blur(0);
+  /* `none`, not `blur(0)` — the minifier compresses blur(0) to the invalid
+     blur(), which browsers drop, leaving the element permanently blurred */
+  filter: none;
 }
 
 /* Without JavaScript nothing ever adds .in, so the reveal must resolve on its
@@ -144,7 +146,9 @@ h3 {
 .state-in .word > span {
   transform: none;
   opacity: 1;
-  filter: blur(0);
+  /* `none`, not `blur(0)` — the minifier compresses blur(0) to the invalid
+     blur(), which browsers drop, leaving the element permanently blurred */
+  filter: none;
 }
 .state-out .word > span {
   transform: translateY(-70%) rotate(-1.5deg);
@@ -167,7 +171,9 @@ h3 {
 .state-in .state-copy {
   opacity: 1;
   transform: none;
-  filter: blur(0);
+  /* `none`, not `blur(0)` — the minifier compresses blur(0) to the invalid
+     blur(), which browsers drop, leaving the element permanently blurred */
+  filter: none;
 }
 .state-out .state-copy {
   opacity: 0;
