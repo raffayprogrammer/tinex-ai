@@ -18,10 +18,10 @@ const H = 108;
 const STATES: Target[][] = [
   // brass key, turf fill, warm haze, deep floor
   [
-    { x: 0.5, y: 0.44, a: 0.3 },
+    { x: 0.5, y: 0.44, a: 0.30 },
     { x: 0.74, y: 0.3, a: 0.16 },
     { x: 0.28, y: 0.6, a: 0.12 },
-    { x: 0.55, y: 0.82, a: 0.1 },
+    { x: 0.55, y: 0.82, a: 0.10 },
   ],
   [
     { x: 0.3, y: 0.36, a: 0.27 },
@@ -33,16 +33,20 @@ const STATES: Target[][] = [
     { x: 0.68, y: 0.5, a: 0.29 },
     { x: 0.34, y: 0.28, a: 0.17 },
     { x: 0.5, y: 0.72, a: 0.14 },
-    { x: 0.8, y: 0.66, a: 0.1 },
+    { x: 0.8, y: 0.66, a: 0.10 },
   ],
 ];
 
+/* Key light stays brass; the fill is now indigo so the two are complementary
+   and the glow reads as depth rather than one muddy wash. */
 const TINTS: [number, number, number][] = [
-  [217, 164, 65], // brass
-  [78, 158, 127], // turf
+  [217, 164, 65], // brass — key
+  [86, 96, 196], // indigo — fill, echoes the logo gradient
   [232, 214, 178], // warm haze
-  [70, 92, 84], // deep floor
+  [64, 78, 140], // deep floor
 ];
+
+const GROUND = "#080a14";
 
 export function Atmosphere({ state = 0 }: { state?: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -81,7 +85,7 @@ export function Atmosphere({ state = 0 }: { state?: number }) {
       const targets = STATES[stateRef.current % STATES.length];
 
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = "#0b0e0d";
+      ctx.fillStyle = GROUND;
       ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "lighter";
 
@@ -144,7 +148,7 @@ export function Atmosphere({ state = 0 }: { state?: number }) {
       ref={canvasRef}
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 h-full w-full"
-      style={{ filter: "saturate(112%)" }}
+      style={{ filter: "saturate(120%)" }}
     />
   );
 }

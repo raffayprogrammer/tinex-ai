@@ -3,17 +3,25 @@
 /* ============================================================
    TINEX.AI — design tokens
 
-   A committed dark world. The palette is taken from the customer's
-   own job site rather than from a software deck:
-     brass  — machinery, hi-vis, the accent, spent in one place
+   A committed dark world. The ground is a deep indigo-navy; the
+   semantic colours still come from the customer's own job site:
+     brass  — machinery, hi-vis. The accent, spent in one place.
+              Complementary to the navy ground, which is what makes
+              it carry at this size.
      turf   — living grass, used only for status
      clay   — pavers and brick, used only to price human labor
+
+   Every token below is verified >= 4.5:1 against both --color-ground
+   and --color-surface. Re-run the check before changing any of them.
    ============================================================ */
 
 @theme {
-  --color-ground: #0b0e0d;
-  --color-surface: #111614;
-  --color-surface-2: #171e1b;
+  /* Deep indigo-navy rather than a green-black. Brass sits opposite navy on
+     the wheel, so the accent reads far harder than it did against an
+     analogous ground — and it reconciles with the gold-to-blue logo. */
+  --color-ground: #080a14;
+  --color-surface: #0f1221;
+  --color-surface-2: #161a2c;
   --color-ink: #f2f0ea;
   --color-ink-dim: #b6bcb5;
   --color-muted: #808a81;

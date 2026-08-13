@@ -54,7 +54,7 @@ function Words({ html }: { html: string }) {
               className="word"
               style={{ "--d": `${token.delay}s` } as React.CSSProperties}
             >
-              <span className={token.dim ? "text-muted" : undefined}>
+              <span className={token.dim ? "text-ink-dim" : undefined}>
                 {token.text}
               </span>
             </span>{" "}
@@ -159,6 +159,14 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 rounded-[inherit] shadow-[inset_0_1px_0_rgba(242,240,234,.06),inset_0_-140px_150px_-100px_rgba(0,0,0,.92)]"
         />
 
+        {/* Copy scrim. The ambient glow drifts, so text cannot rely on the
+            canvas staying dark beneath it — measured at 2.81:1 without this.
+            Darkens only the centre band, leaving the glow readable at the edges. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[radial-gradient(ellipse_58%_46%_at_50%_48%,rgba(8,10,20,.82),rgba(8,10,20,.45)_55%,transparent_78%)]"
+        />
+
         <div className="relative z-10 flex flex-1 flex-col justify-between gap-10 p-5 sm:p-7">
           {/* ---------- the state itself ---------- */}
           <div
@@ -209,7 +217,7 @@ export function Hero() {
                   Meet the roster
                 </a>
               </div>
-              <p className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-faint">
+              <p className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-dim">
                 {state.stat.value} · {state.stat.label}
               </p>
             </div>

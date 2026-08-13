@@ -24,9 +24,9 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0B0E0D",
+          background: "#080A14",
           backgroundImage:
-            "radial-gradient(900px circle at 30% 0%, rgba(217,164,65,0.20), transparent 55%), radial-gradient(700px circle at 90% 90%, rgba(78,158,127,0.12), transparent 55%)",
+            "radial-gradient(900px circle at 30% 0%, rgba(217,164,65,0.20), transparent 55%), radial-gradient(700px circle at 90% 90%, rgba(86,96,196,0.16), transparent 55%)",
           padding: 64,
           fontFamily: "sans-serif",
         }}
@@ -121,7 +121,7 @@ export default function OpengraphImage() {
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", fontSize: 20, color: "#5B645D", letterSpacing: 2 }}>
+          <div style={{ display: "flex", fontSize: 20, color: "#7A8080", letterSpacing: 2 }}>
             TINEX.AI
           </div>
         </div>
