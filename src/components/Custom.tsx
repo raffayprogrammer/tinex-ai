@@ -32,7 +32,7 @@ export function Custom() {
         <Reveal delay={0.14}>
           <a
             href="mailto:hello@tinex.ai?subject=Custom%20automation%20enquiry"
-            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-line bg-white/[0.04] px-6 py-3 text-sm text-ink transition-[background-color,border-color] duration-400 hover:border-white/25 hover:bg-white/[0.09]"
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-line bg-white/[0.04] px-6 py-3 text-sm text-ink transition-[background-color,border-color] duration-200 hover:border-white/25 hover:bg-white/[0.09]"
           >
             Describe the problem
           </a>

@@ -31,7 +31,7 @@ export function Roster() {
           <Reveal
             key={agent.name}
             delay={(i % 3) * 0.07}
-            className="spotlight relative flex flex-col gap-4 bg-ground p-7 transition-colors duration-500 ease-[var(--ease-soft)] hover:bg-surface-2 sm:p-8"
+            className="reveal-card spotlight relative flex flex-col gap-4 bg-ground p-7 transition-colors duration-250 ease-[var(--ease-soft)] hover:bg-surface-2 sm:p-8"
           >
             <article
               onPointerMove={track}

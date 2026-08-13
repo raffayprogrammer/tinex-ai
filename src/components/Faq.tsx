@@ -31,7 +31,7 @@ export function Faq() {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-6 py-5 text-left text-[1.0625rem] tracking-[-0.02em] transition-colors duration-400 ease-[var(--ease-soft)] hover:text-brass"
+                  className="flex w-full items-center justify-between gap-6 py-5 text-left text-[1.0625rem] tracking-[-0.02em] transition-colors duration-200 ease-[var(--ease-soft)] hover:text-brass"
                 >
                   {item.q}
                   <Sign open={isOpen} />

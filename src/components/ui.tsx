@@ -94,7 +94,7 @@ export function Band({
 }
 
 const BASE =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-[background-color,border-color,transform,color] duration-400 ease-[var(--ease)] active:scale-[0.97]";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-[background-color,border-color,transform,color] duration-200 ease-[var(--ease)] active:scale-[0.97]";
 
 export function Button({
   href,
@@ -127,7 +127,7 @@ export function ArrowUpRight({ className = "" }: { className?: string }) {
       viewBox="0 0 11 11"
       fill="none"
       aria-hidden="true"
-      className={`transition-transform duration-400 ease-[var(--ease)] group-hover:translate-x-[3px] group-hover:-translate-y-[3px] ${className}`}
+      className={`transition-transform duration-200 ease-[var(--ease)] group-hover:translate-x-[3px] group-hover:-translate-y-[3px] ${className}`}
     >
       <path
         d="M2 9 9 2M3.4 2H9v5.6"

@@ -88,7 +88,7 @@ export function Pricing() {
               type="button"
               aria-pressed={cycle === c}
               onClick={() => setCycle(c)}
-              className={`relative z-10 whitespace-nowrap rounded-full px-5 py-2 text-[0.8125rem] transition-colors duration-400 ease-[var(--ease-soft)] ${
+              className={`relative z-10 whitespace-nowrap rounded-full px-5 py-2 text-[0.8125rem] transition-colors duration-200 ease-[var(--ease-soft)] ${
                 cycle === c ? "text-ink" : "text-muted hover:text-ink-dim"
               }`}
             >
@@ -105,7 +105,7 @@ export function Pricing() {
 
       <div className="grid gap-4 lg:grid-cols-4">
         {tiers.map((tier, i) => (
-          <Reveal key={tier.name} delay={i * 0.07}>
+          <Reveal key={tier.name} delay={i * 0.07} className="reveal-card">
             <TierCard tier={tier} cycle={cycle} animate={animate} />
           </Reveal>
         ))}
@@ -147,7 +147,7 @@ function TierCard({
 
   return (
     <article
-      className={`flex h-full flex-col gap-6 rounded-3xl border p-6 transition-[transform,border-color] duration-500 ease-[var(--ease)] hover:-translate-y-1 sm:p-7 ${
+      className={`flex h-full flex-col gap-6 rounded-3xl border p-6 transition-[transform,border-color] duration-250 ease-[var(--ease)] hover:-translate-y-1 sm:p-7 ${
         tier.featured
           ? "border-brass/30 bg-[linear-gradient(180deg,rgba(217,164,65,.08),rgba(17,22,20,.5)_46%)]"
           : "border-line-soft bg-surface hover:border-line"
@@ -188,7 +188,7 @@ function TierCard({
 
       <a
         href="#contact"
-        className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-400 ${
+        className={`inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-200 ${
           tier.featured
             ? "sheen bg-brass text-[#12100a] hover:bg-[#e6b455]"
             : "border border-line bg-white/[0.04] text-ink hover:border-white/25 hover:bg-white/[0.09]"

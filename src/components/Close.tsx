@@ -39,7 +39,7 @@ export function Close() {
         <Reveal delay={0.18} className="relative flex flex-wrap justify-center gap-2.5">
           <a
             href="mailto:hello@tinex.ai?subject=Hiring%20an%20AI%20employee"
-            className="sheen group inline-flex items-center gap-2 rounded-full bg-brass px-6 py-3 text-sm font-medium text-[#12100a] transition-colors duration-400 hover:bg-[#e6b455]"
+            className="sheen group inline-flex items-center gap-2 rounded-full bg-brass px-6 py-3 text-sm font-medium text-[#12100a] transition-colors duration-200 hover:bg-[#e6b455]"
           >
             Book the call
             <svg
@@ -48,7 +48,7 @@ export function Close() {
               viewBox="0 0 11 11"
               fill="none"
               aria-hidden="true"
-              className="transition-transform duration-400 ease-[var(--ease)] group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"
+              className="transition-transform duration-200 ease-[var(--ease)] group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"
             >
               <path
                 d="M2 9 9 2M3.4 2H9v5.6"
@@ -60,7 +60,7 @@ export function Close() {
           </a>
           <a
             href="#pricing"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.04] px-6 py-3 text-sm text-ink transition-[background-color,border-color] duration-400 hover:border-white/25 hover:bg-white/[0.09]"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.04] px-6 py-3 text-sm text-ink transition-[background-color,border-color] duration-200 hover:border-white/25 hover:bg-white/[0.09]"
           >
             Look at pricing again
           </a>
@@ -81,7 +81,7 @@ export function Close() {
                 <a
                   key={n.href}
                   href={n.href}
-                  className="text-[0.8125rem] text-muted transition-colors duration-350 hover:text-ink"
+                  className="inline-flex min-h-11 items-center text-[0.8125rem] text-muted transition-colors duration-200 hover:text-ink"
                 >
                   {n.label}
                 </a>

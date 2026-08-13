@@ -98,7 +98,7 @@ export function Nav() {
               data-active={isActive}
               onMouseEnter={(e) => moveThumb(e.currentTarget)}
               onFocus={(e) => moveThumb(e.currentTarget)}
-              className={`relative z-10 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[0.8125rem] transition-colors duration-350 ease-[var(--ease-soft)] ${
+              className={`relative z-10 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[0.8125rem] transition-colors duration-200 ease-[var(--ease-soft)] ${
                 isActive ? "text-ink" : "text-ink-dim hover:text-ink"
               }`}
             >
@@ -119,7 +119,7 @@ export function Nav() {
 
       <a
         href="#pricing"
-        className="group inline-flex items-center gap-2 rounded-full bg-brass px-4 py-2 text-[0.8125rem] font-medium text-[#12100a] transition-colors duration-400 hover:bg-[#e6b455]"
+        className="group inline-flex items-center gap-2 rounded-full bg-brass px-4 py-2 text-[0.8125rem] font-medium text-[#12100a] transition-colors duration-200 hover:bg-[#e6b455]"
       >
         Start hiring
       </a>
