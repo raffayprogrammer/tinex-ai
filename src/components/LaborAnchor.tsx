@@ -1,4 +1,5 @@
 import { laborAnchor, proof } from "@/content/site";
+import { ProofStat } from "./ProofStat";
 import { Reveal } from "./Reveal";
 import { Band, Kicker } from "./ui";
 
@@ -74,7 +75,7 @@ export function LaborAnchor() {
             className="flex flex-col gap-1.5 bg-ground p-6 sm:p-7"
           >
             <span className="font-mono text-[clamp(1.5rem,2.6vw,2rem)] tabular-nums leading-none text-brass">
-              {p.figure}
+              <ProofStat figure={p.figure} />
             </span>
             <span className="text-sm leading-snug text-ink-dim">{p.label}</span>
             <span className="mt-1 font-mono text-[0.625rem] uppercase tracking-[0.12em] text-faint">

@@ -1,5 +1,6 @@
 import { agentManager, steps } from "@/content/site";
 import { Reveal } from "./Reveal";
+import { StepRail } from "./StepRail";
 import { Band, Kicker, SectionHead } from "./ui";
 
 export function Hiring() {
@@ -11,7 +12,8 @@ export function Hiring() {
         body="Three steps, in this order, because each one depends on the last."
       />
 
-      <div className="flex flex-col">
+      <div className="relative flex flex-col sm:pl-8">
+        <StepRail />
         {steps.map((step, i) => (
           <Reveal
             key={step.n}

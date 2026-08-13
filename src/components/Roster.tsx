@@ -1,6 +1,7 @@
 "use client";
 
 import { roster, type AgentStatus } from "@/content/site";
+import { JobPhoto } from "./JobPhoto";
 import { Reveal } from "./Reveal";
 import { Band, SectionHead } from "./ui";
 
@@ -71,11 +72,23 @@ export function Roster() {
         ))}
       </div>
 
-      <Reveal delay={0.1} className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
-        <p className="text-sm text-muted">
-          Every agent identifies itself as AI and announces recording at the start
-          of each call.
-        </p>
+      <Reveal delay={0.1} className="mt-4 grid gap-4 sm:grid-cols-[1.4fr_1fr] sm:items-stretch">
+        <JobPhoto
+          slot="crew-on-site"
+          caption="Your crew, on your jobs"
+          className="min-h-[220px] rounded-2xl border border-line-soft"
+          sizes="(max-width: 640px) 100vw, 55vw"
+        />
+        <div className="flex flex-col justify-center gap-3 rounded-2xl border border-line-soft bg-surface p-6">
+          <p className="text-[0.9375rem] leading-relaxed text-ink-dim">
+            The agents handle the phone and the paperwork. The part that
+            actually needs hands stays with your crew.
+          </p>
+          <p className="text-[0.8125rem] leading-relaxed text-muted">
+            Every agent identifies itself as AI and announces recording at the
+            start of each call.
+          </p>
+        </div>
       </Reveal>
     </Band>
   );
